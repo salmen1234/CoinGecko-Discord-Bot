@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 bot = commands.Bot(command_prefix='?',description='Bot')
 
-token = 'OTcxODg3MjA1NjI0NzA5MTgw.YnRCfg.D-4fF2nkAOKtfbnhDrNpZrTtuhM'
+token = 'Bot Token'
 
 print('rédy')
 
