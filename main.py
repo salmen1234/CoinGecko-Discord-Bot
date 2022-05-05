@@ -4,7 +4,7 @@ from discord.ext import commands
 
 bot = commands.Bot(command_prefix='?',description='Bot')
 
-token = 'OTcxMzk2NTM3MzM2ODgxMTky.YnJ5hg.-ilV17ct5oOKWEiHX7a-fcx-Xsk'
+token = 'Bot Token'
 
 cg = CoinGeckoAPI()
 
