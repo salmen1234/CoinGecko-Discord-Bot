@@ -6,7 +6,7 @@ import soupsieve
 
 bot = commands.Bot(command_prefix='?',description='Bot')
 
-token = 'OTcxMzk2NTM3MzM2ODgxMTky.GdR9Hl.VMy3UtWNTpkopPpYzONBo2i4EEEdec6aeMOpMg'
+token = 'Bot Token'
 
 url = 'https://api.coingecko.com/api/v3/'
 
