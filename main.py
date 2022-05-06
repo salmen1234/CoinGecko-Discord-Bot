@@ -6,13 +6,38 @@ bot = commands.Bot(command_prefix='?',description='Bot')
 
 token = 'Bot Token'
 
-cg = CoinGeckoAPI()
+url = 'https://api.coingecko.com/api/v3/'
 
-@bot.command()
-async def price(ctx, value1):
-    prices = cg.get_price(ids=value1, vs_currencies='eur')
-    
-    await ctx.send("Le prix du(de l') " + value1 + ' est de : ' + str(prices[value1]['eur']) + '€')
+class CoinGecko():
+    def price(self, ids, vs_currencies, include_market_cap):
+        query = {
+            'ids': ids,
+            'vs_currencies': vs_currencies,
+            'include_market_cap': include_market_cap
+        }
 
+        response = requests.get(url + 'simple/price', params=query).json()
 
-bot.run(token)
+        return response
+
+    def supported_currencies(self):
+        response = requests.get(url + 'simple/supported_vs_currencies').json()      
+
+        return response
+
+    def search(self, keyword=''):
+        query = {'query': keyword}
+
+        response = requests.get(url + 'search', params=query).json()['coins'][0]['name']
+
+        return response
+
+cg = CoinGecko()
+
+#price = cg.price(ids='ethereum', vs_currencies='sats', include_market_cap='false')
+#supported_c = cg.supported_currencies()
+search = cg.search('')
+
+#print(price)
+#print(list)
+print(search)
